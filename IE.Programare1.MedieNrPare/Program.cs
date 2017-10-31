@@ -13,7 +13,7 @@ namespace IE.Programare1.MedieNrPare
             Console.WriteLine("Introduceti n:");
             int n = Convert.ToInt32(Console.ReadLine());
 
-            //ver. 1
+            //ver.1
             var suma = 0;
             double media = 0;
             int cateNumere = 0;
