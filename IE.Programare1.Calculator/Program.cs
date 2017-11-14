@@ -10,43 +10,52 @@ namespace IE.Programare1.Calculator
     {
         static void Main(string[] args)
         {
-            Console.WriteLine("Introduceti a:");
-            double a = double.Parse(Console.ReadLine());
-            Console.WriteLine("Introduceti b:");
-            double b = double.Parse(Console.ReadLine());
-            Console.WriteLine("Introduceti operatia:");
-            string operatia = Console.ReadLine();
+            ConsoleKeyInfo tasta;
+            do
+            {
 
-            double rezultat = 0;
-            bool operatieInvalida = false;
-            switch(operatia)
-            {
-                case "+":
-                    rezultat = a + b;
-                    break;
-                case "-":
-                    rezultat = a - b;
-                    break;
-                case "*":
-                    rezultat = a * b;
-                    break;
-                case ":":
-                    rezultat = a / b;
-                    break;
-                default:
-                    operatieInvalida = true;
-                    break;
-            }
-            if(operatieInvalida)
-            {
-                Console.WriteLine("Operatia ceruta nu este suportata!");
-            }
-            else
-            {
-                Console.WriteLine($"Rezultat: {rezultat}");
-            }
+                Console.WriteLine("Introduceti a:");
+                double a = double.Parse(Console.ReadLine());
+                Console.WriteLine("Introduceti b:");
+                double b = double.Parse(Console.ReadLine());
+                Console.WriteLine("Introduceti operatia:");
+                string operatia = Console.ReadLine();
 
-            Console.ReadKey();
+                double rezultat = 0;
+                bool operatieInvalida = false;
+                switch(operatia)
+                {
+                    case "+":
+                    case "suma":
+                        rezultat = a + b;
+                        break;
+                    case "-":
+                        rezultat = a - b;
+                        break;
+                    case "*":
+                        rezultat = a * b;
+                        break;
+                    case ":":
+                        rezultat = a / b;
+                        break;
+                    default:
+                        operatieInvalida = true;
+                        break;
+                }
+                if(operatieInvalida)
+                {
+                    Console.WriteLine("Operatia ceruta nu este suportata!");
+                }
+                else
+                {
+                    Console.WriteLine($"Rezultat: {rezultat}");
+                }
+
+                tasta = Console.ReadKey();
+                
+
+
+            } while(tasta.Key != ConsoleKey.Escape);
         }
     }
 }
