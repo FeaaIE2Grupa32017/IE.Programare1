@@ -1,4 +1,5 @@
-﻿using System;
+﻿using IE.Programare1.Functii;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -17,7 +18,7 @@ namespace IE.Programare1.CursDeSchimb
 
             decimal[] cursuri = new decimal[lunaCurenta - 1];
             int i = 0;
-            while(i < cursuri.Length)
+            while (i < cursuri.Length)
             {
                 Console.WriteLine("Introduceti cursul pentru luna " + i);
                 cursuri[i] = Convert.ToDecimal(Console.ReadLine());
@@ -31,40 +32,41 @@ namespace IE.Programare1.CursDeSchimb
             suma = cursuri[0];
             do
             {
-                if(cursuri[j] < min)
+                if (cursuri[j] < min)
                 {
                     min = cursuri[j];
                 }
-                if(cursuri[j] > max)
+                if (cursuri[j] > max)
                 {
                     max = cursuri[j];
                 }
                 suma += cursuri[j];
                 j++;
-            } while(j < cursuri.Length);
+            } while (j < cursuri.Length);
             media = suma / cursuri.Length;
 
             int[] luniMin = new int[0];
             int[] luniMax = new int[0];
 
-            for(int k = 0; k < cursuri.Length; k++)
+            for (int k = 0; k < cursuri.Length; k++)
             {
-                if(min == cursuri[k])
+                if (min == cursuri[k])
                 {
                     Array.Resize(ref luniMin, luniMin.Length + 1);
                     luniMin[luniMin.Length - 1] = k;
                 }
-                if(max == cursuri[k])
+                if (max == cursuri[k])
                 {
                     Array.Resize(ref luniMax, luniMax.Length + 1);
                     luniMax[luniMax.Length - 1] = k;
                 }
             }
             string mesaj = "Luni de min: ";
-            for(int k = 0; k < luniMin.Length; k++)
+            for (int k = 0; k < luniMin.Length; k++)
             {
-                mesaj += luniMin[k];
-                if(k == luniMin.Length - 1)
+                string numeLuna = Functie.ObtineNumeLuna((byte)luniMin[k]);
+                mesaj += numeLuna;
+                if (k != luniMin.Length - 1)
                 {
                     mesaj += ";";
                 }
@@ -89,5 +91,8 @@ namespace IE.Programare1.CursDeSchimb
 
             Console.ReadKey();
         }
+
+
+        
     }
 }
