@@ -78,5 +78,11 @@
   <ItemGroup>
     <None Include="App.config" />
   </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\IE.Programare1.Struct\IE.Programare1.Struct.csproj">
+      <Project>{2D220F1F-5817-4BB7-A514-3C29D2353F36}</Project>
+      <Name>IE.Programare1.Struct</Name>
+    </ProjectReference>
+  </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

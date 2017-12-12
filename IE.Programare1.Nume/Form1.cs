@@ -1,4 +1,5 @@
-﻿using System;
+﻿using IE.Programare1.Functii;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -36,6 +37,26 @@ namespace IE.Programare1.Nume
             {
                 AdaugaNume();
             }
+        }
+
+        private void uxButtonOrdoneaza_Click(object sender, EventArgs e)
+        {
+            string[] valori = new string[uxListBoxNume.Items.Count];
+            for (int i = 0; i < uxListBoxNume.Items.Count; i++)
+            {
+                valori[i] = uxListBoxNume.Items[i].ToString();
+            }
+
+            //Functie.BubbleSort(valori, uxCheckBoxDirectie.Checked);
+            //Functie.InsertionSort(valori, uxCheckBoxDirectie.Checked);
+            //Functie.SelectionSort(valori, uxCheckBoxDirectie.Checked);
+            Array.Sort(valori);
+            if (uxCheckBoxDirectie.Checked)
+            {
+                Array.Reverse(valori);
+            }
+            uxListBoxNume.Items.Clear();
+            uxListBoxNume.Items.AddRange(valori);
         }
     }
 }

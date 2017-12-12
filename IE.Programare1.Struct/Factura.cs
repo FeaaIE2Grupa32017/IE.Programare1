@@ -11,5 +11,11 @@ namespace IE.Programare1.Struct
         public int Numar;
         public DateTime Data;
         public Produs[] Linii;
+
+        public override string ToString()
+        {
+            return $"Nr. {this.Numar} din data {this.Data}";
+        }
+
     }
 }

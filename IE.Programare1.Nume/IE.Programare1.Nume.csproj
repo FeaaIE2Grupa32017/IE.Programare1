@@ -78,5 +78,11 @@
   <ItemGroup>
     <None Include="App.config" />
   </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\IE.Programare1.Functii\IE.Programare1.Functii.csproj">
+      <Project>{68038DA3-AEA7-405F-94DF-F815CE69F7FD}</Project>
+      <Name>IE.Programare1.Functii</Name>
+    </ProjectReference>
+  </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

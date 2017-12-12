@@ -143,6 +143,7 @@
             this.uxButtonOrdoneaza.TabIndex = 1;
             this.uxButtonOrdoneaza.Text = "Ordoneaza";
             this.uxButtonOrdoneaza.UseVisualStyleBackColor = true;
+            this.uxButtonOrdoneaza.Click += new System.EventHandler(this.uxButtonOrdoneaza_Click);
             // 
             // Form1
             // 
